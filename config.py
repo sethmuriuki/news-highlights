@@ -1,6 +1,6 @@
 import os
 
-class config:
+class Config:
     '''
     General configurations parent class 
     '''
@@ -14,5 +14,10 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
-    pass
-    
+   
+   DEBUG = True
+   
+Config_options = {
+    'development':DevConfig,
+    'production':ProdConfig
+}
