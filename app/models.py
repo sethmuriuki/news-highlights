@@ -1,4 +1,4 @@
-class sources:
+class Sources:
     '''
     source class  to to defines source objects
     '''
@@ -13,3 +13,22 @@ class sources:
         self.descrption = description
         self.url = url 
         self.category = category
+
+
+class hHighlights:
+     '''
+     Highlights class to define highlights objects
+     '''
+
+     def __init__(self,authour,title,description,url,image,date)
+
+        '''
+        __init__ method to define highlights properties
+        '''
+
+        self.authour = authour
+        self.title = title
+        self.description = description
+        self.url = url
+        self.image = image
+        self.date = date
