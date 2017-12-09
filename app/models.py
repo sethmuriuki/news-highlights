@@ -15,7 +15,7 @@ class Sources:
         self.category = category
 
 
-class hHighlights:
+class Highlights:
      '''
      Highlights class to define highlights objects
      '''
