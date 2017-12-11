@@ -20,7 +20,7 @@ class Highlights:
      Highlights class to define highlights objects
      '''
 
-     def __init__(self,authour,title,description,url,image,date)
+     def __init__(self,authour,title,description,url,image,date):
 
         '''
         __init__ method to define highlights properties
