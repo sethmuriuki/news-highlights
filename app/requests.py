@@ -18,7 +18,7 @@ def get_news_source(category):
     function that gets the json response to the url request
     '''
 
-    get_news_url = 'https://newsapi.org/v1/sources'.fomart(category,api_key)
+    get_news_url = " https://newsapi.org/v1/sources".fomart(category,api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -58,3 +58,45 @@ def process_results(news_list):
         news_results.append(news_source)
 
     return news_results
+
+def get_highlights_sources(id):
+    '''
+    function that gets the json response to the url request
+    '''
+
+    get_highlights_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(id,api_key)
+
+    with urllib.request.urlopen(get_highlights_url) as url:
+        get_highlights_data = url.read()
+        get_highlights_responce = json.loads(get_highlights_data)
+
+        highlights_results = None
+        if get_highlights_responce['highlights']:
+            highlights_results_list = get_highlights_response
+            highlights_results = Process_highlights(highlights_results_list)
+
+def Process_highlights(highlights_list):
+    '''
+    processes highlights results and changes them to object list
+
+    Args:
+        highlight_list:dictionaries that contain highlight details
+
+    Returns:
+        highlights_results:a list of highlights objects
+    '''
+
+    highlights_results = [] 
+
+    for highlights_item in highlights_list:
+         author = highlights_item.get('author')
+         title = highlights_item.get('title')
+         description = highlights_item.get('descripiton')
+         url = highlights_item.get('url')
+         image = highlights_item.get('urlToImage')
+         date = highlights_item.get('publishedAt')
+
+
+         if date:
+             highlights_object = Highlights(author,title,description,url,image,date)
+             highlights_results.append(highlights_object)
