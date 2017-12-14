@@ -1,5 +1,5 @@
 import urllib.request,json
-from models import Sources, Highlights
+from .models import Sources, Highlights
 
 
 api_key = None
@@ -10,16 +10,16 @@ def configure_request(app):
     function that takes in application instance and replace None variables to application configuration object
     '''
 
-    global api_key,base_url
-    api_key = app.config['NEWS_API_KEY']
-
+    global api_key
+    # api_key = app.config['NEWS_API_KEY']
+    api_key='937b10b0c16b4f408a44526714103037'
 def get_news_source(category):
     '''
     function that gets the json response to the url request
     '''
 
-    get_news_url = "https://newsapi.org/v1/sources".fomart(category,api_key)
-
+    get_news_url = 'https://newsapi.org/v1/source'.format(category,api_key)
+    # get_news_url = 'https://newsapi.org/v2/sources?apiKey=937b10b0c16b4f408a44526714103037'
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
