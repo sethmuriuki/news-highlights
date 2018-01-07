@@ -13,13 +13,14 @@ def configure_request(app):
     global api_key
     # api_key = app.config['NEWS_API_KEY']
     api_key='937b10b0c16b4f408a44526714103037'
+
+
 def get_news_source(category):
     '''
     function that gets the json response to the url request
     '''
 
     get_news_url = 'https://newsapi.org/v1/sources?category={}&apikey={}'.format(category,api_key)
-    # get_news_url = 'https://newsapi.org/v2/sources?apiKey=937b10b0c16b4f408a44526714103037'
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
@@ -100,3 +101,5 @@ def Process_highlights(highlights_list):
          if date:
              highlights_object = Highlights(author,title,description,url,image,date)
              highlights_results.append(highlights_object)
+
+    return highlights_results
