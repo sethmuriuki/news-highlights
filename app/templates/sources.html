@@ -4,10 +4,9 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %}
 <!-- Content block -->
 {% block content %}
-<!-- <title>{{ title }}</title> -->
 <div class align="center">
     <ul>
-        {{ macro.displayArticleList(article) }}
+        {{ macro.displayHighlightsList(highlights) }}
     </ul>
 </div>
 {% endblock %}

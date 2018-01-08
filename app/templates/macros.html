@@ -7,14 +7,14 @@
 {% endfor %} {% endmacro %}
 
 <!-- highlights -->
-{% macro displayHighlightsList(highlights_list) %} {% for article in highlights_list %}
+{% macro displayHighlightsList(highlights) %} {% for article in highlights %}
 <div class="well well-sm col-xs-4 col-sm-4 col-md-4 col-lg-4 highlights-card">
-    <h4><a href="{{ highlights.url }}" class="highlights-title">{{ highlights.title }}</a></h4>
+    <h4><a href="{{ article.url }}" class="highlights-title">{{ article.title }}</a></h4>
     <small class="publish-date">Date:{{article.date}}</small>
-    <img src="{{ highlights.image }}" alt="{{ article.title }}" class="img-responsive highlights-image">
+    <img src="{{ article.image }}" alt="{{ article.title }}" class="img-responsive highlights-image">
     <p>
-        <span class="highlights-description">{{ highlights.description |truncate(120)}}</span>
-        <b><br><a href="{{ highlights.url }}"> Read more...</a></b>
+        <span class="highlights-description">{{ article.description}}</span>
+        <b><br><a href="{{ article.url }}"> Read more...</a></b>
     </p>
 </div>
 {% endfor %} {% endmacro %}

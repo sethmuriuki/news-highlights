@@ -21,8 +21,8 @@ def source(id):
     views function that returns the source page and its data
     '''
     #Getting highlights in respect to sources chosen
-    highlights = get_highlights_source(id)
+    highlights = get_highlights_sources(id)
     title = f'{id} - Top News'
 
-    return render_template('source.html',title = title, highlights = highlights)
+    return render_template('sources.html',title = title, highlights = highlights)
 

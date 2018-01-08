@@ -72,9 +72,11 @@ def get_highlights_sources(id):
         get_highlights_responce = json.loads(get_highlights_data)
 
         highlights_results = None
-        if get_highlights_responce['highlights']:
-            highlights_results_list = get_highlights_response
+        if get_highlights_responce['articles']:
+            highlights_results_list = get_highlights_responce['articles']
             highlights_results = Process_highlights(highlights_results_list)
+    return highlights_results
+
 
 def Process_highlights(highlights_list):
     '''
@@ -94,7 +96,7 @@ def Process_highlights(highlights_list):
          title = highlights_item.get('title')
          description = highlights_item.get('descripiton')
          url = highlights_item.get('url')
-         image = highlights_item.get('urlToImage')
+         image =root highlights_item.get('urlToImage')
          date = highlights_item.get('publishedAt')
 
 
