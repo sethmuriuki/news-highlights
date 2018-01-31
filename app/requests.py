@@ -96,7 +96,7 @@ def Process_highlights(highlights_list):
          title = highlights_item.get('title')
          description = highlights_item.get('descripiton')
          url = highlights_item.get('url')
-         image =root highlights_item.get('urlToImage')
+         image = highlights_item.get('urlToImage')
          date = highlights_item.get('publishedAt')
 
 
